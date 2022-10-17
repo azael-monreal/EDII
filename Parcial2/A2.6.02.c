@@ -10,21 +10,21 @@ typedef struct nodo {
 typedef struct {
 	NODO head;
 	NODO tail;
-} LISTAC;
+} LISTAD;
 
-void init (LISTAC*);
+void init (LISTAD*);
 int creaNodo (NODO*, int);
-void capturaLista (LISTAC*);
-int insertaIn (LISTAC*, int);
-int insertaFn (LISTAC*, int);
-int eliminaIn (LISTAC*, int*);
-int eliminaFn (LISTAC*, int*);
-void imprimeIn (LISTAC);
-void imprimeFn (LISTAC);
+void capturaLista (LISTAD*);
+int insertaIn (LISTAD*, int);
+int insertaFn (LISTAD*, int);
+int eliminaIn (LISTAD*, int*);
+int eliminaFn (LISTAD*, int*);
+void imprimeIn (LISTAD);
+void imprimeFn (LISTAD);
 
 int main ()
 {
-	LISTAC listad;
+	LISTAD listad;
 
 	init (&listad);
 	capturaLista (&listad);
@@ -49,7 +49,7 @@ int main ()
 	printf ("\n");
 }
 
-void init (LISTAC* q) { q->head = q->tail = NULL; }
+void init (LISTAD* q) { q->head = q->tail = NULL; }
 
 int creaNodo (NODO* nuevo, int dato)
 {
@@ -64,7 +64,7 @@ int creaNodo (NODO* nuevo, int dato)
 	return (res);
 }
 
-void capturaLista (LISTAC* lista)
+void capturaLista (LISTAD* lista)
 {
 	int res, dato, resp, pos;
 	do {
@@ -81,7 +81,7 @@ void capturaLista (LISTAC* lista)
 	} while (res && resp);
 }
 
-int insertaIn (LISTAC* lista, int dato)
+int insertaIn (LISTAD* lista, int dato)
 {
 	int res;
 	NODO nuevo;
@@ -97,7 +97,7 @@ int insertaIn (LISTAC* lista, int dato)
 	return (res);
 }
 
-int insertaFn (LISTAC* lista, int dato)
+int insertaFn (LISTAD* lista, int dato)
 {
 	int res;
 	NODO nuevo;
@@ -113,7 +113,7 @@ int insertaFn (LISTAC* lista, int dato)
 	return (res);
 }
 
-int eliminaIn (LISTAC* lista, int* r)
+int eliminaIn (LISTAD* lista, int* r)
 {
 	int res = 0;
 	NODO temp;
@@ -127,7 +127,7 @@ int eliminaIn (LISTAC* lista, int* r)
 	return (res);
 }
 
-int eliminaFn (LISTAC* lista, int* r)
+int eliminaFn (LISTAD* lista, int* r)
 {
 	int res = 0;
 	NODO temp;
@@ -141,7 +141,7 @@ int eliminaFn (LISTAC* lista, int* r)
 	return (res);
 }
 
-void imprimeIn (LISTAC lista)
+void imprimeIn (LISTAD lista)
 {
 	while (lista.head) {
 		printf ("%d ", lista.head->dato);
@@ -149,7 +149,7 @@ void imprimeIn (LISTAC lista)
 	}
 }
 
-void imprimeFn (LISTAC lista)
+void imprimeFn (LISTAD lista)
 {
 	while (lista.tail) {
 		printf ("%d ", lista.tail->dato);
